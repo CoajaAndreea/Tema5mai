@@ -1,22 +1,26 @@
 public class P19 {
     public static void main(String[] args) {
-        int[] sir={4,5,7,2,9,6,12,45,76};
+        int[] sir={200,5,7,21,1,106,0,145,76};
         int aux=sir[0];
         int ok=1;
+        int i=0;
+//        System.out.println(sir.length);
 
-         for(int i=0;i<sir.length;i++)
-             if(sir[i]>sir[i+1])
-             {
-                 aux=sir[i];
-                 sir[i]=sir[i+1];
-                 sir[i+1]=sir[i];
-                 ok=0; //verificam daca sirul este ordonat sau nu
+
+             for (i=0;i<sir.length-1;i++) {
+                 for (int j=i+1;j<sir.length;j++)
+                 if (sir[i] > sir[j]) {
+                     aux = sir[i];
+                     sir[i] = sir[j];
+                     sir[j] = aux;
+                     ok = 0; //verificam daca sirul este ordonat sau nu
+                 }
              }
 
              if(ok==1)
                  System.out.println("Sirul este crescator");
                 else
-                 for (int i=0;i<sir.length;i++)
-                     System.out.println(sir[i]);
+                    for (i=0;i<sir.length;i++)
+                        System.out.print(sir[i]+" ");
     }
 }
